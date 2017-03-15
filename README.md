@@ -1,3 +1,16 @@
+This plugin has been forked from
+[katzer/cordova-plugin-local-notifications](https://github.com/katzer/cordova-plugin-local-notifications)
+because it was not meeting my needs. The original README, a ways
+below, contains links into the old ecosystem.
+
+This fork plans to remove the plugin’s ability to register for
+handling notifications and turn it purely into a tool for sending
+local notifications.
+
+
+# Original README
+
+====
 
 [![npm version](https://badge.fury.io/js/de.appplant.cordova.plugin.local-notification.svg)](http://badge.fury.io/js/de.appplant.cordova.plugin.local-notification)
 [![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L3HKQCD9UA35A "Donate once-off to this project using Paypal")
