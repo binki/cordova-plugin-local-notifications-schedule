@@ -311,6 +311,9 @@ exports.hasPermission = function (callback, scope) {
 /**
  * Register permission to show notifications if not already granted.
  *
+ * This is now a no-op. Be sure to use phonegap-push-plugin’s init()
+ * and wait for its completion before using any APIs from this plugin.
+ *
  * @param {Function} callback
  *      The function to be exec as the callback
  * @param {Object?} scope

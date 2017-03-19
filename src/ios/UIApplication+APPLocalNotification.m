@@ -34,21 +34,8 @@
  */
 - (BOOL) hasPermissionToScheduleLocalNotifications
 {
-    if ([[UIApplication sharedApplication]
-         respondsToSelector:@selector(registerUserNotificationSettings:)])
-    {
-        UIUserNotificationType types;
-        UIUserNotificationSettings *settings;
-
-        settings = [[UIApplication sharedApplication]
-                    currentUserNotificationSettings];
-
-        types = UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound;
-
-        return (settings.types & types);
-    } else {
-        return YES;
-    }
+    // Assume that the user is using the phonegap-plugin-push
+    return YES;
 }
 
 /**
@@ -56,23 +43,9 @@
  */
 - (void) registerPermissionToScheduleLocalNotifications
 {
-    if ([[UIApplication sharedApplication]
-         respondsToSelector:@selector(registerUserNotificationSettings:)])
-    {
-        UIUserNotificationType types;
-        UIUserNotificationSettings *settings;
-
-        settings = [[UIApplication sharedApplication]
-                    currentUserNotificationSettings];
-
-        types = settings.types|UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound;
-
-        settings = [UIUserNotificationSettings settingsForTypes:types
-                                                     categories:nil];
-
-        [[UIApplication sharedApplication]
-         registerUserNotificationSettings:settings];
-    }
+    // Do not do anything. User is responsible to use
+    // phonegap-plugin-push to configure displaying push
+    // notifications.
 }
 
 #pragma mark -
